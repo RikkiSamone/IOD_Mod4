@@ -10,27 +10,43 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: #e3f2fd;
+            display: flex;
         }
 
         .card {
-            padding: 10px;
+            padding: 30px;
+            border: 1px solid black;
+            max-width: 550px;
+            margin: 10px;
+
         }
 
         .card-title {
             font-weight: 600;
-            font-size: 3em;
+            font-size: 2em;
             padding: 0 0 10px 0;
+            text-align: center;
+        }
+
+        .card-text{
+            font-size: 1.5em;
         }
 
         .card-description {
             font-weight: 400;
-            font-size: 2em
+            font-size: 2em;
+           text-align: center;
         }
 
-        button{
-            padding: 10px;
-
+        .card-text{
+            text-align: center;
         }
+
+        a {
+            margin-left: 40px;
+            text-align: center;
+        }
+
     </style>
 </head>
 
@@ -39,40 +55,80 @@
         <div class="card">
             <div class="card-body">
                 <div class="card-title"></div>
-                <div class="card-text"></div>
+                <h5 class="card-text"></h5>
+                <div class= "card-art" ></div>
+                <a class="card-link" target="_blank">View Full Image</a>
+            
             </div>
         </div>
     </template>
     <div id="card-list"></div>
 
     <script>
-        function addCard(
+        /*function addCard(
                 title = "My Card Title",
                 text = "lorem impusm ble bla",
                 url = null,
-        ) {
+        )*/ 
+       
+       
+       function addCard( name, title, imageURL, linkURL)
+       {
             // clone the template
-            const template =
+                const template =
                 document.getElementById("card-template")
                     .content.cloneNode(true);
 
-            // populate the template
-            template.querySelector('.card-title').innerText = title;
-            template.querySelector('.card-text').innerText = text;
+            // populate the template and passing the content dynamically for exercise 1
+            template.querySelector(".card-title").innerText = title;
+            template.querySelector(".card-text").innerText = name;
+
+            const imgElement = template.querySelector(".card-art");
+               imgElement.src = imageURL;
+
+            const linkElement = template.querySelector('.card-link');
+           linkElement.href = linkURL; // Make sure this matches the parameter
+           linkElement.innerText = "View Full Image";
+
+    
+            document.querySelector('#card-list').appendChild(template);
+            
+          
+           };
+
+            
+
+            
 
             // include the populated template into the page
-            document.querySelector('#card-list')
-                .appendChild(template);
-        };
+            
+           
+        //data set example for exercise 2
+         /*const data = [
+            { name: 'Bob', age: 23 },
+            { name: 'Alice', age: 39 },
+            { name: 'Rikki', age: 30},
+    ];*/
+        //data set for artists portfolio, exercise 3
 
-        //data set example 
-         const data = [
-            { name: 'bob', age: 23 },
-            { name: 'alice', age: 39 }
-        ];
+    const artist = {
+       
+        portfolio: [
+        
+            { name: "Van Gogh", title: "Portrait", url:
+            "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image"},
+            
+            { name: "Van Gogh", title: "Sky", url:
+            "https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg" },
+        ]
+    };
 
-            data.forEach(person => {
+            /*data.forEach(person => {
                 addCard(`Name: ${person.name}`, `Age: ${person.age}`)
+            });*/
+
+            artist.portfolio.forEach(artwork => {
+                    addCard(`Artist: ${artwork.name}`, artwork.title, artwork.url, artwork.url);
             });
 
     </script>
