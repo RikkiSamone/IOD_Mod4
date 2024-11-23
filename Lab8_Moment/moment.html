@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8: Moment</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+</head>
+<body>
+    <h1> Using Moment.js</h1>
+    <!-- container for Today's date -->
+     <div class="today"></div>
+
+    <!-- container for birthday output -->
+     <div class="birthdate"></div>
+<!-- container for London Time output -->
+    <div class="London"></div>
+
+    <!-- container for Q1 output -->
+    <div class="q1"></div>
+    
+    <!-- container for Q2 output -->
+    <div class="q2"></div>
+
+    <!-- container for form -->
+     <div class="closedate">
+        <p>Calculcate Closest Date to Today</p>
+        <form id="calc-date">
+            <fieldset>
+                <label for="date1" class="form-date1">Enter First Date (MM/DD/YYYY): <input id="date1" name="date1" type="date">
+            </fieldset>
+            
+            <fieldset>
+                <label for="date2" class="form-date2">Enter the Second Date (MM/DD/YYYY): <input id="date2" name="date2" type="date">
+            </fieldset>
+            <button type="submit" class="btn btm-primary">Calculate Closest Date</button>
+        </form>
+    </div>
+    <!-- container for Q3 output -->
+        <div class=q3></div>
+
+    <!-- container for Q4 Form-->
+    <div class="dateorder">
+        <p>Which Date Comes First?</p>
+        <form id="calc-date-order">
+            <fieldset>
+                <label for="date1" class="form-dateorder1">Enter First Date (MM/DD/YYYY): <input id="date-order1" name="date-order1"
+                        type="date">
+            </fieldset>
+    
+            <fieldset>
+                <label for="date2" class="form-dateorder2">Enter the Second Date (MM/DD/YYYY): <input id="date-order2" name="date-order2"
+                        type="date">
+            </fieldset>
+            <button type="submit" class="btn btm-primary">Calculate Date Order</button>
+        </form>
+    </div>
+    <!-- container for Q4 output -->
+        <div class=q4></div>
+<script src="moment.js"></script>
+
+</body>
+</html>
