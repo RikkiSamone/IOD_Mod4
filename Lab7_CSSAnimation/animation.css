@@ -1,0 +1,44 @@
+.container{
+    border: 5px solid black;
+    height: 1000px;
+    background-color: darkorchid;
+    animation-name: transition;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes transition{
+
+        25% {
+            background-color: #ff65a3;
+            /* Bright pink */
+        }
+    
+        50% {
+            background-color: #7a77ff;
+            /* Light blue */
+        }
+    
+        100% {
+            background-color: #65baff;
+            /* Sky blue */
+        }
+}
+
+.box {
+border: 2px solid black;
+height: 200px;
+width: 200px;
+background-color: cornflowerblue;
+animation-name: slidedown;
+animation-duration: 8s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+z-index: 2;
+}
+
+@keyframes slidedown{
+    from { margin-bottom: 0%; }
+    65%{ background-color:darkorchid}
+    to { margin-top: 100vh; }
+}
